@@ -3,13 +3,13 @@
 session_start();
 require __DIR__ . '/config/database.php';
 
-// redirect if not logged in
+// Redirect if not logged in
 if (!isset($_SESSION['user_id'])) {
-  header('Location: login.php');
-  exit;
+    header('Location: login.php');
+    exit;
 }
 
-// fetch subscriptions (dropping the product_pricing join so we see all rows)
+// Fetch subscriptions (dropping product_pricing join)
 $sql = "
   SELECT
     s.id,
@@ -44,12 +44,17 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
   <title>All Subscriptions</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <!-- Bootstrap & Theme CSS -->
+  <!-- 1) Core vendor bundle (feather/themify icons, Bootstrap, etc.) -->
   <link rel="stylesheet" href="vendors/css/vendor.bundle.base.css">
+
+  <!-- 2) Vanilla DataTables CSS (won't touch your nav/icons) -->
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+
+  <!-- 3) Theme CSS -->
   <link rel="stylesheet" href="css/vertical-layout-light/style.css">
 
-  <!-- DataTables CSS -->
-  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap4.min.css">
+  <!-- 4) Your custom overrides -->
+  <link rel="stylesheet" href="css/app.css">
 </head>
 <body>
   <div class="container-scroller">
@@ -65,7 +70,7 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
           <h4 class="mb-4">All Subscriptions</h4>
 
           <div class="table-responsive">
-            <table id="subscriptionsTable" class="table table-striped table-bordered" style="width:100%">
+            <table id="subscriptionsTable" class="display" style="width:100%">
               <thead>
                 <tr>
                   <th>ID</th>
@@ -119,9 +124,8 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
   <!-- DataTables JS -->
   <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
-  <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap4.min.js"></script>
 
-  <!-- theme scripts -->
+  <!-- Theme scripts -->
   <script src="js/off-canvas.js"></script>
   <script src="js/hoverable-collapse.js"></script>
   <script src="js/template.js"></script>
@@ -131,13 +135,12 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
   <script>
     $(document).ready(function() {
       $('#subscriptionsTable').DataTable({
-        paging:       true,
-        searching:    true,
-        ordering:     true,
-        info:         true,
-        responsive:   true,
-        order:        [[0, 'desc']],
-        lengthMenu:   [[10, 25, 50, -1], [10, 25, 50, 'All']]
+        paging:     true,
+        searching:  true,
+        ordering:   true,
+        info:       true,
+        order:      [[0, 'desc']],
+        lengthMenu: [[10, 25, 50, -1], [10, 25, 50, 'All']]
       });
     });
   </script>
