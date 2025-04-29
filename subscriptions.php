@@ -1,5 +1,6 @@
 <?php
 // subscriptions.php
+
 session_start();
 require __DIR__ . '/config/database.php';
 
@@ -9,7 +10,7 @@ if (!isset($_SESSION['user_id'])) {
     exit;
 }
 
-// Fetch subscriptions (dropping product_pricing join)
+// Fetch subscriptions
 $sql = "
   SELECT
     s.id,
@@ -44,28 +45,30 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
   <title>All Subscriptions</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <!-- 1) Core vendor bundle (feather/themify icons, Bootstrap, etc.) -->
+  <!-- Core vendor bundle -->
   <link rel="stylesheet" href="vendors/css/vendor.bundle.base.css">
-
-  <!-- 2) Vanilla DataTables CSS (won't touch your nav/icons) -->
+  <!-- DataTables (vanilla) -->
   <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
-
-  <!-- 3) Theme CSS -->
+  <!-- Theme CSS -->
   <link rel="stylesheet" href="css/vertical-layout-light/style.css">
-
-  <!-- 4) Your custom overrides -->
+  <!-- Custom overrides -->
   <link rel="stylesheet" href="css/app.css">
 </head>
 <body>
   <div class="container-scroller">
 
+    <!-- top navbar -->
     <?php include __DIR__ . '/partials/_navbar.php'; ?>
 
     <div class="container-fluid page-body-wrapper">
-    <?php include __DIR__ . '/partials/_settings-panel.php'; ?>
-      <?php include __DIR__ . '/partials/_sidebar.php'; ?>
-      
 
+      <!-- right sidebar: settings panel -->
+      <?php include __DIR__ . '/partials/_settings-panel.php'; ?>
+
+      <!-- left sidebar: menu -->
+      <?php include __DIR__ . '/partials/_sidebar.php'; ?>
+
+      <!-- main content panel -->
       <div class="main-panel">
         <div class="content-wrapper">
           <h4 class="mb-4">All Subscriptions</h4>
@@ -91,7 +94,7 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 </tr>
               </thead>
               <tbody>
-                <?php foreach($rows as $r): ?>
+                <?php foreach ($rows as $r): ?>
                   <tr>
                     <td><?= htmlspecialchars($r['id']) ?></td>
                     <td><?= htmlspecialchars($r['customer']) ?></td>
@@ -113,19 +116,18 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
             </table>
           </div>
 
-        </div><!-- content-wrapper -->
+        </div><!-- /.content-wrapper -->
 
         <?php include __DIR__ . '/partials/_footer.php'; ?>
-      </div><!-- main-panel -->
-    </div><!-- page-body-wrapper -->
-  </div><!-- container-scroller -->
+      </div><!-- /.main-panel -->
 
-  <!-- vendor.bundle.base.js includes jQuery, Popper & Bootstrap JS -->
+    </div><!-- /.page-body-wrapper -->
+  </div><!-- /.container-scroller -->
+
+  <!-- core JS bundle (jQuery, Bootstrap, etc.) -->
   <script src="vendors/js/vendor.bundle.base.js"></script>
-
   <!-- DataTables JS -->
   <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
-
   <!-- Theme scripts -->
   <script src="js/off-canvas.js"></script>
   <script src="js/hoverable-collapse.js"></script>
@@ -140,8 +142,8 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
         searching:  true,
         ordering:   true,
         info:       true,
-        order:      [[0, 'desc']],
-        lengthMenu: [[10, 25, 50, -1], [10, 25, 50, 'All']]
+        order:      [[0,'desc']],
+        lengthMenu: [[10,25,50,-1],[10,25,50,'All']]
       });
     });
   </script>
