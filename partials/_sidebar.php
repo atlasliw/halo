@@ -12,7 +12,7 @@
     <!-- Contact Management (Customers & Partners) -->
     <li class="nav-item">
       <a class="nav-link" href="contact_management.php">
-      <i class="icon-grid menu-icon"></i>
+      <i class="icon-head menu-icon"></i>
         <span class="menu-title">Contact Management</span>
       </a>
     </li>
@@ -28,7 +28,7 @@
     <!-- Subscriptions -->
     <li class="nav-item">
       <a class="nav-link" href="subscriptions.php">
-        <i class="icon-key menu-icon"></i>
+        <i class="icon-ban menu-icon"></i>
         <span class="menu-title">Subscriptions</span>
       </a>
     </li>
@@ -44,7 +44,7 @@
     <!-- Helpdesk Tickets -->
     <li class="nav-item">
       <a class="nav-link" href="helpdesk_tickets.php">
-        <i class="icon-envelope-letter menu-icon"></i>
+        <i class="icon-paper menu-icon"></i>
         <span class="menu-title">Helpdesk</span>
       </a>
     </li>
