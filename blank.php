@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <?php include __DIR__.'/partials/_head.php'; ?>
+  
   <title>Customers</title>
 </head>
 <body>
