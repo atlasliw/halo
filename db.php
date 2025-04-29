@@ -58,6 +58,16 @@ try {
     $stmtErr   = isset($stmt) ? $stmt->errorInfo() : null;
     $rows      = null;
 }
+
+// debug: count rows in subscriptions
+$count = $pdo->query("SELECT COUNT(*) FROM subscriptions")
+             ->fetchColumn();
+echo "<p>Subscriptions table has <strong>$count</strong> rows.</p>";
+
+// debug: count rows in customers
+$count = $pdo->query("SELECT COUNT(*) FROM customers")
+             ->fetchColumn();
+echo "<p>Customers table has <strong>$count</strong> rows.</p>";
 ?>
 <!DOCTYPE html>
 <html lang="en">
