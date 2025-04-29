@@ -4,7 +4,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  
+  <!-- after -->
+    <link rel="stylesheet" href="css/app.css">
   <title>Customers</title>
 </head>
 <body>
