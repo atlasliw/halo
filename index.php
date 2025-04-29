@@ -27,7 +27,8 @@
 <body>
   <div class="container-scroller">
     <!-- Header -->
-    <?php include 'header.php'; ?>
+    <?php include 'config/header.php'; ?>
+    
     <!-- partial -->
     <div class="container-fluid page-body-wrapper">
       <!-- partial:partials/_settings-panel.html -->
@@ -851,7 +852,7 @@
         </div>
         <!-- content-wrapper ends -->
         <!-- Footer -->
-        <?php include 'footer.php'; ?>
+        <?php include 'config/footer.php'; ?>
         <!-- partial -->
       </div>
       <!-- main-panel ends -->
