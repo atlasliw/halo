@@ -1,18 +1,31 @@
 <?php
+// login.php
 session_start();
-require __DIR__ . '/config/database.php'; // adjust path as needed
+
+// 0) If already logged in, send to index.php
+if (isset($_SESSION['user_id'])) {
+    header('Location: index.php');
+    exit;
+}
+
+// Show errors during development
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+
+// 1) Database connection
+require __DIR__ . '/config/database.php';
 
 $error = '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // 1) Grab & sanitize inputs
+    // 2) Grab & sanitize inputs
     $username = trim($_POST['username'] ?? '');
     $password = $_POST['password'] ?? '';
 
     if ($username === '' || $password === '') {
         $error = 'Please enter both username and password.';
     } else {
-        // 2) Look up user by username or email
+        // 3) Look up user by username or email
         $stmt = $pdo->prepare('
             SELECT id, username, email, password_hash
             FROM users
@@ -22,11 +35,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt->execute(['u' => $username]);
         $user = $stmt->fetch();
 
-        // 3) Verify password
+        // 4) Verify password hash
         if ($user && password_verify($password, $user['password_hash'])) {
-            // 4) Success: set session and redirect
-            $_SESSION['user_id'] = $user['id'];
-            $_SESSION['username'] = $user['username'];
+            // 5) Success → store session and redirect
+            $_SESSION['user_id']   = $user['id'];
+            $_SESSION['username']  = $user['username'];
             header('Location: index.php');
             exit;
         } else {
@@ -70,13 +83,29 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
               
               <form class="pt-3" method="post" action="">
                 <div class="form-group">
-                  <input type="text" name="username" class="form-control form-control-lg" id="username" placeholder="Username or Email" value="<?= isset($username) ? htmlspecialchars($username) : '' ?>">
+                  <input 
+                    type="text" 
+                    name="username" 
+                    class="form-control form-control-lg" 
+                    id="username" 
+                    placeholder="Username or Email"
+                    value="<?= htmlspecialchars($username ?? '') ?>"
+                  >
                 </div>
                 <div class="form-group">
-                  <input type="password" name="password" class="form-control form-control-lg" id="password" placeholder="Password">
+                  <input 
+                    type="password" 
+                    name="password" 
+                    class="form-control form-control-lg" 
+                    id="password" 
+                    placeholder="Password"
+                  >
                 </div>
                 <div class="mt-3">
-                  <button type="submit" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">
+                  <button 
+                    type="submit" 
+                    class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn"
+                  >
                     SIGN IN
                   </button>
                 </div>
@@ -95,7 +124,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                   </button>
                 </div>
                 <div class="text-center mt-4 font-weight-light">
-                  Don't have an account? <a href="register.html" class="text-primary">Create</a>
+                  Don't have an account? 
+                  <a href="register.html" class="text-primary">Create</a>
                 </div>
               </form>
               
