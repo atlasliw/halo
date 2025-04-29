@@ -3,66 +3,57 @@
 
     <!-- Dashboard -->
     <li class="nav-item">
-      <a class="nav-link" href="index.php">
+      <a class="nav-link" href="index.php" title="Dashboard">
         <i class="icon-grid menu-icon"></i>
-        <span class="menu-title">Dashboard</span>
       </a>
     </li>
 
-    <!-- Contact Management (Customers & Partners) -->
+    <!-- Contact Management -->
     <li class="nav-item">
-      <a class="nav-link" href="contact_management.php">
-      <i class="icon-head menu-icon"></i>
-        <span class="menu-title">Contact Management</span>
+      <a class="nav-link" href="contact_management.php" title="Contact Management">
+        <i class="icon-people menu-icon"></i>
       </a>
     </li>
 
     <!-- Products Management -->
     <li class="nav-item">
-      <a class="nav-link" href="product_management.php">
+      <a class="nav-link" href="product_management.php" title="Products">
         <i class="icon-layers menu-icon"></i>
-        <span class="menu-title">Products</span>
       </a>
     </li>
 
     <!-- Subscriptions -->
     <li class="nav-item">
-      <a class="nav-link" href="subscriptions.php">
-        <i class="icon-ban menu-icon"></i>
-        <span class="menu-title">Subscriptions</span>
+      <a class="nav-link" href="subscriptions.php" title="Subscriptions">
+        <i class="icon-key menu-icon"></i>
       </a>
     </li>
 
     <!-- Transactions -->
     <li class="nav-item">
-      <a class="nav-link" href="transactions.php">
-        <i class="icon-currency menu-icon"></i>
-        <span class="menu-title">Transactions</span>
+      <a class="nav-link" href="transactions.php" title="Transactions">
+        <i class="icon-credit-card menu-icon"></i>
       </a>
     </li>
 
     <!-- Helpdesk Tickets -->
     <li class="nav-item">
-      <a class="nav-link" href="helpdesk_tickets.php">
-        <i class="icon-paper menu-icon"></i>
-        <span class="menu-title">Helpdesk</span>
+      <a class="nav-link" href="helpdesk_tickets.php" title="Helpdesk">
+        <i class="icon-envelope-letter menu-icon"></i>
       </a>
     </li>
 
     <!-- System Logs -->
     <li class="nav-item">
-      <a class="nav-link" href="system_logs.php">
+      <a class="nav-link" href="system_logs.php" title="System Logs">
         <i class="icon-shield menu-icon"></i>
-        <span class="menu-title">System Logs</span>
       </a>
     </li>
 
     <!-- Reports & Analytics -->
     <li class="nav-item">
-      <a class="nav-link" data-toggle="collapse" href="#reports-menu" aria-expanded="false" aria-controls="reports-menu">
-        <i class="icon-chart menu-icon"></i>
-        <span class="menu-title">Reports</span>
-        <i class="menu-arrow"></i>
+      <a class="nav-link" data-toggle="collapse" href="#reports-menu" aria-expanded="false" title="Reports">
+        <i class="icon-pie-chart menu-icon"></i>
       </a>
       <div class="collapse" id="reports-menu">
         <ul class="nav flex-column sub-menu">
@@ -74,12 +65,10 @@
       </div>
     </li>
 
-    <!-- Administration (Users & Roles) -->
+    <!-- Administration -->
     <li class="nav-item">
-      <a class="nav-link" data-toggle="collapse" href="#admin-menu" aria-expanded="false" aria-controls="admin-menu">
+      <a class="nav-link" data-toggle="collapse" href="#admin-menu" aria-expanded="false" title="Administration">
         <i class="icon-settings menu-icon"></i>
-        <span class="menu-title">Administration</span>
-        <i class="menu-arrow"></i>
       </a>
       <div class="collapse" id="admin-menu">
         <ul class="nav flex-column sub-menu">
@@ -91,10 +80,8 @@
 
     <!-- Lookup Data -->
     <li class="nav-item">
-      <a class="nav-link" data-toggle="collapse" href="#lookup-menu" aria-expanded="false" aria-controls="lookup-menu">
+      <a class="nav-link" data-toggle="collapse" href="#lookup-menu" aria-expanded="false" title="Lookup Data">
         <i class="icon-notebook menu-icon"></i>
-        <span class="menu-title">Lookup Data</span>
-        <i class="menu-arrow"></i>
       </a>
       <div class="collapse" id="lookup-menu">
         <ul class="nav flex-column sub-menu">
@@ -116,10 +103,8 @@
 
     <!-- System Configuration -->
     <li class="nav-item">
-      <a class="nav-link" data-toggle="collapse" href="#config-menu" aria-expanded="false" aria-controls="config-menu">
+      <a class="nav-link" data-toggle="collapse" href="#config-menu" aria-expanded="false" title="System Config">
         <i class="icon-equalizer menu-icon"></i>
-        <span class="menu-title">System Config</span>
-        <i class="menu-arrow"></i>
       </a>
       <div class="collapse" id="config-menu">
         <ul class="nav flex-column sub-menu">
