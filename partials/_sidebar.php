@@ -36,7 +36,7 @@
     <!-- Transactions -->
     <li class="nav-item">
       <a class="nav-link" href="transactions.php">
-        <i class="icon-currency menu-icon"></i>
+        <i class="icon-credit-card menu-icon"></i>
         <span class="menu-title">Transactions</span>
       </a>
     </li>
@@ -60,16 +60,32 @@
     <!-- Reports & Analytics -->
     <li class="nav-item">
       <a class="nav-link" data-toggle="collapse" href="#reports-menu" aria-expanded="false" aria-controls="reports-menu">
-        <i class="icon-chart menu-icon"></i>
+        <i class="icon-bar-graph menu-icon"></i>
         <span class="menu-title">Reports</span>
         <i class="menu-arrow"></i>
       </a>
       <div class="collapse" id="reports-menu">
         <ul class="nav flex-column sub-menu">
-          <li class="nav-item"><a class="nav-link" href="reports/subscriptions.php">Subscription Report</a></li>
-          <li class="nav-item"><a class="nav-link" href="reports/sales.php">Sales Report</a></li>
-          <li class="nav-item"><a class="nav-link" href="reports/helpdesk_metrics.php">Helpdesk Metrics</a></li>
-          <li class="nav-item"><a class="nav-link" href="reports/data_analysis.php">Data Analysis</a></li>
+          <li class="nav-item">
+            <a class="nav-link" href="reports/subscriptions.php">
+              <i class="ti-calendar menu-icon"></i> Subscription Report
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="reports/sales.php">
+              <i class="ti-shopping-cart menu-icon"></i> Sales Report
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="reports/helpdesk_metrics.php">
+              <i class="ti-headphone menu-icon"></i> Helpdesk Metrics
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="reports/data_analysis.php">
+              <i class="ti-bar-chart menu-icon"></i> Data Analysis
+            </a>
+          </li>
         </ul>
       </div>
     </li>
@@ -83,8 +99,16 @@
       </a>
       <div class="collapse" id="admin-menu">
         <ul class="nav flex-column sub-menu">
-          <li class="nav-item"><a class="nav-link" href="users.php">Manage Users</a></li>
-          <li class="nav-item"><a class="nav-link" href="roles.php">Manage Roles</a></li>
+          <li class="nav-item">
+            <a class="nav-link" href="users.php">
+              <i class="ti-user menu-icon"></i> Manage Users
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="roles.php">
+              <i class="ti-lock menu-icon"></i> Manage Roles
+            </a>
+          </li>
         </ul>
       </div>
     </li>
@@ -98,18 +122,66 @@
       </a>
       <div class="collapse" id="lookup-menu">
         <ul class="nav flex-column sub-menu">
-          <li class="nav-item"><a class="nav-link" href="company_types.php">Company Types</a></li>
-          <li class="nav-item"><a class="nav-link" href="states.php">States</a></li>
-          <li class="nav-item"><a class="nav-link" href="industries.php">Industries</a></li>
-          <li class="nav-item"><a class="nav-link" href="sla_levels.php">SLA Levels</a></li>
-          <li class="nav-item"><a class="nav-link" href="payment_terms.php">Payment Terms</a></li>
-          <li class="nav-item"><a class="nav-link" href="license_statuses.php">License Statuses</a></li>
-          <li class="nav-item"><a class="nav-link" href="license_types.php">License Types</a></li>
-          <li class="nav-item"><a class="nav-link" href="subscription_statuses.php">Subscription Statuses</a></li>
-          <li class="nav-item"><a class="nav-link" href="transaction_statuses.php">Transaction Statuses</a></li>
-          <li class="nav-item"><a class="nav-link" href="ticket_statuses.php">Ticket Statuses</a></li>
-          <li class="nav-item"><a class="nav-link" href="ticket_priorities.php">Ticket Priorities</a></li>
-          <li class="nav-item"><a class="nav-link" href="log_event_types.php">Log Event Types</a></li>
+          <li class="nav-item">
+            <a class="nav-link" href="company_types.php">
+              <i class="ti-briefcase menu-icon"></i> Company Types
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="states.php">
+              <i class="ti-map menu-icon"></i> States
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="industries.php">
+              <i class="ti-briefcase menu-icon"></i> Industries
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="sla_levels.php">
+              <i class="ti-time menu-icon"></i> SLA Levels
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="payment_terms.php">
+              <i class="ti-receipt menu-icon"></i> Payment Terms
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="license_statuses.php">
+              <i class="ti-tag menu-icon"></i> License Statuses
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="license_types.php">
+              <i class="ti-key menu-icon"></i> License Types
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="subscription_statuses.php">
+              <i class="ti-bookmark menu-icon"></i> Subscription Statuses
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="transaction_statuses.php">
+              <i class="ti-exchange-vertical menu-icon"></i> Transaction Statuses
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="ticket_statuses.php">
+              <i class="ti-flag menu-icon"></i> Ticket Statuses
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="ticket_priorities.php">
+              <i class="ti-star menu-icon"></i> Ticket Priorities
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="log_event_types.php">
+              <i class="ti-alert menu-icon"></i> Log Event Types
+            </a>
+          </li>
         </ul>
       </div>
     </li>
@@ -123,10 +195,26 @@
       </a>
       <div class="collapse" id="config-menu">
         <ul class="nav flex-column sub-menu">
-          <li class="nav-item"><a class="nav-link" href="config/general.php">General Settings</a></li>
-          <li class="nav-item"><a class="nav-link" href="config/email.php">Email Settings</a></li>
-          <li class="nav-item"><a class="nav-link" href="config/integrations.php">Integrations</a></li>
-          <li class="nav-item"><a class="nav-link" href="config/localization.php">Localization</a></li>
+          <li class="nav-item">
+            <a class="nav-link" href="config/general.php">
+              <i class="ti-settings menu-icon"></i> General Settings
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="config/email.php">
+              <i class="ti-email menu-icon"></i> Email Settings
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="config/integrations.php">
+              <i class="ti-plug menu-icon"></i> Integrations
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="config/localization.php">
+              <i class="ti-world menu-icon"></i> Localization
+            </a>
+          </li>
         </ul>
       </div>
     </li>
