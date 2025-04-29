@@ -1,128 +1,118 @@
-<nav class="sidebar sidebar-offcanvas" id="sidebar">
-  <ul class="nav">
+<!-- Navbar: main application navigation bar -->
+<nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+  <!-- Brand wrapper: full and mini logos -->
+  <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
+    <!-- Link logo back to dashboard -->
+    <a class="navbar-brand brand-logo mr-5" href="index.php">
+      <img src="images/logo.svg" class="mr-2" alt="logo"/>
+    </a>
+    <a class="navbar-brand brand-logo-mini" href="index.php">
+      <img src="images/logo-mini.svg" alt="logo"/>
+    </a>
+  </div>
 
-    <!-- Dashboard (icon-only) -->
-    <li class="nav-item">
-      <a class="nav-link" href="index.php" title="Dashboard">
-        <i class="icon-grid menu-icon"></i>
-      </a>
-    </li>
+  <!-- Menu wrapper: toggles, search, and right-side items -->
+  <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
+    <!-- Minimize sidebar toggler -->
+    <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+      <span class="icon-menu"></span>
+    </button>
 
-    <!-- Contact Management (icon-only top-level) -->
-    <li class="nav-item">
-      <a class="nav-link" href="contact_management.php" title="Contact Management">
-        <i class="icon-people menu-icon"></i>
-      </a>
-    </li>
+    <!-- Search bar (visible on large screens) -->
+    <ul class="navbar-nav mr-lg-2">
+      <li class="nav-item nav-search d-none d-lg-block">
+        <div class="input-group">
+          <div class="input-group-prepend hover-cursor" id="navbar-search-icon">
+            <span class="input-group-text" id="search">
+              <i class="icon-search"></i>
+            </span>
+          </div>
+          <input type="text" class="form-control" id="navbar-search-input"
+                 placeholder="Search now" aria-label="search" aria-describedby="search">
+        </div>
+      </li>
+    </ul>
 
-    <!-- Products (icon-only) -->
-    <li class="nav-item">
-      <a class="nav-link" href="product_management.php" title="Products">
-        <i class="icon-layers menu-icon"></i>
-      </a>
-    </li>
+    <!-- Right-side icons: notifications, profile, settings -->
+    <ul class="navbar-nav navbar-nav-right">
+      <!-- Notifications dropdown -->
+      <li class="nav-item dropdown">
+        <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown"
+           href="#" data-toggle="dropdown">
+          <i class="icon-bell mx-0"></i>
+          <span class="count"></span>
+        </a>
+        <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list"
+             aria-labelledby="notificationDropdown">
+          <p class="mb-0 font-weight-normal float-left dropdown-header">Notifications</p>
+          <a class="dropdown-item preview-item">
+            <div class="preview-thumbnail">
+              <div class="preview-icon bg-success">
+                <i class="ti-info-alt mx-0"></i>
+              </div>
+            </div>
+            <div class="preview-item-content">
+              <h6 class="preview-subject font-weight-normal">Application Error</h6>
+              <p class="font-weight-light small-text mb-0 text-muted">Just now</p>
+            </div>
+          </a>
+          <a class="dropdown-item preview-item">
+            <div class="preview-thumbnail">
+              <div class="preview-icon bg-warning">
+                <i class="ti-settings mx-0"></i>
+              </div>
+            </div>
+            <div class="preview-item-content">
+              <h6 class="preview-subject font-weight-normal">Settings</h6>
+              <p class="font-weight-light small-text mb-0 text-muted">Private message</p>
+            </div>
+          </a>
+          <a class="dropdown-item preview-item">
+            <div class="preview-thumbnail">
+              <div class="preview-icon bg-info">
+                <i class="ti-user mx-0"></i>
+              </div>
+            </div>
+            <div class="preview-item-content">
+              <h6 class="preview-subject font-weight-normal">New user registration</h6>
+              <p class="font-weight-light small-text mb-0 text-muted">2 days ago</p>
+            </div>
+          </a>
+        </div>
+      </li>
 
-    <!-- Subscriptions (icon-only) -->
-    <li class="nav-item">
-      <a class="nav-link" href="subscriptions.php" title="Subscriptions">
-        <i class="icon-key menu-icon"></i>
-      </a>
-    </li>
+      <!-- Profile dropdown -->
+      <li class="nav-item nav-profile dropdown">
+        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
+          <img src="images/faces/face28.jpg" alt="profile"/>
+        </a>
+        <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
+          <!-- Link to user settings page -->
+          <a class="dropdown-item" href="config/general.php">
+            <i class="ti-settings text-primary"></i>
+            Settings
+          </a>
+          <!-- Logout action -->
+          <a class="dropdown-item" href="logout.php">
+            <i class="ti-power-off text-primary"></i>
+            Logout
+          </a>
+        </div>
+      </li>
 
-    <!-- Transactions (icon-only) -->
-    <li class="nav-item">
-      <a class="nav-link" href="transactions.php" title="Transactions">
-        <i class="icon-credit-card menu-icon"></i>
-      </a>
-    </li>
+      <!-- Additional settings icon (large screens): toggles the right‐sidebar -->
+      <li class="nav-item nav-settings d-none d-lg-flex">
+        <a class="nav-link" href="#" id="settings-trigger">
+          <i class="icon-ellipsis"></i>
+        </a>
+      </li>
+    </ul>
 
-    <!-- Helpdesk (icon-only) -->
-    <li class="nav-item">
-      <a class="nav-link" href="helpdesk_tickets.php" title="Helpdesk">
-        <i class="icon-envelope-letter menu-icon"></i>
-      </a>
-    </li>
-
-    <!-- System Logs (icon-only) -->
-    <li class="nav-item">
-      <a class="nav-link" href="system_logs.php" title="System Logs">
-        <i class="icon-shield menu-icon"></i>
-      </a>
-    </li>
-
-    <!-- Reports & Analytics (icon-only) -->
-    <li class="nav-item">
-      <a class="nav-link" data-toggle="collapse" href="#reports-menu" aria-expanded="false" title="Reports">
-        <i class="icon-bar-graph menu-icon"></i>
-      </a>
-      <div class="collapse" id="reports-menu">
-        <ul class="nav flex-column sub-menu">
-          <li class="nav-item">
-            <a class="nav-link" href="reports/subscriptions.php">Subscription Report</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="reports/sales.php">Sales Report</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="reports/helpdesk_metrics.php">Helpdesk Metrics</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="reports/data_analysis.php">Data Analysis</a>
-          </li>
-        </ul>
-      </div>
-    </li>
-
-    <!-- Administration (icon-only) -->
-    <li class="nav-item">
-      <a class="nav-link" data-toggle="collapse" href="#admin-menu" aria-expanded="false" title="Administration">
-        <i class="icon-settings menu-icon"></i>
-      </a>
-      <div class="collapse" id="admin-menu">
-        <ul class="nav flex-column sub-menu">
-          <li class="nav-item"><a class="nav-link" href="users.php">Manage Users</a></li>
-          <li class="nav-item"><a class="nav-link" href="roles.php">Manage Roles</a></li>
-        </ul>
-      </div>
-    </li>
-
-    <!-- Lookup Data (icon-only) -->
-    <li class="nav-item">
-      <a class="nav-link" data-toggle="collapse" href="#lookup-menu" aria-expanded="false" title="Lookup Data">
-        <i class="icon-notebook menu-icon"></i>
-      </a>
-      <div class="collapse" id="lookup-menu">
-        <ul class="nav flex-column sub-menu">
-          <li class="nav-item"><a class="nav-link" href="company_types.php">Company Types</a></li>
-          <li class="nav-item"><a class="nav-link" href="states.php">States</a></li>
-          <li class="nav-item"><a class="nav-link" href="industries.php">Industries</a></li>
-          <li class="nav-item"><a class="nav-link" href="sla_levels.php">SLA Levels</a></li>
-          <li class="nav-item"><a class="nav-link" href="payment_terms.php">Payment Terms</a></li>
-          <li class="nav-item"><a class="nav-link" href="license_statuses.php">License Statuses</a></li>
-          <li class="nav-item"><a class="nav-link" href="license_types.php">License Types</a></li>
-          <li class="nav-item"><a class="nav-link" href="subscription_statuses.php">Subscription Statuses</a></li>
-          <li class="nav-item"><a class="nav-link" href="transaction_statuses.php">Transaction Statuses</a></li>
-          <li class="nav-item"><a class="nav-link" href="ticket_statuses.php">Ticket Statuses</a></li>
-          <li class="nav-item"><a class="nav-link" href="ticket_priorities.php">Ticket Priorities</a></li>
-          <li class="nav-item"><a class="nav-link" href="log_event_types.php">Log Event Types</a></li>
-        </ul>
-      </div>
-    </li>
-
-    <!-- System Config (icon-only) -->
-    <li class="nav-item">
-      <a class="nav-link" data-toggle="collapse" href="#config-menu" aria-expanded="false" title="System Config">
-        <i class="icon-equalizer menu-icon"></i>
-      </a>
-      <div class="collapse" id="config-menu">
-        <ul class="nav flex-column sub-menu">
-          <li class="nav-item"><a class="nav-link" href="config/general.php">General Settings</a></li>
-          <li class="nav-item"><a class="nav-link" href="config/email.php">Email Settings</a></li>
-          <li class="nav-item"><a class="nav-link" href="config/integrations.php">Integrations</a></li>
-          <li class="nav-item"><a class="nav-link" href="config/localization.php">Localization</a></li>
-        </ul>
-      </div>
-    </li>
-
-  </ul>
+    <!-- Off-canvas sidebar toggler (small screens) -->
+    <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center"
+            type="button" data-toggle="offcanvas">
+      <span class="icon-menu"></span>
+    </button>
+  </div>
 </nav>
+<!-- End of Navbar -->
