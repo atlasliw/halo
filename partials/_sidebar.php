@@ -12,7 +12,7 @@
     <!-- Contact Management (Customers & Partners) -->
     <li class="nav-item">
       <a class="nav-link" href="contact_management.php">
-      <i class="icon-layers menu-icon"></i>
+      <i class="icon-people menu-icon"></i>
         <span class="menu-title">Contact Management</span>
       </a>
     </li>
