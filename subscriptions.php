@@ -13,30 +13,29 @@
   // Fetch subscriptions with all FK lookups
     $sql = "
     SELECT
-    s.id,
-    c.company_name         AS customer,
-    p.name                 AS product,
-    s.license_key,
-    sts.name               AS status,
-    lt.name                AS license_type,
-    DATE_FORMAT(s.start_date, '%Y-%m-%d')     AS start_date,
-    IFNULL(DATE_FORMAT(s.renewal_date, '%Y-%m-%d'), '-') AS renewal_date,
-    IFNULL(DATE_FORMAT(s.expiration_date, '%Y-%m-%d'), '-') AS expiration_date,
-    IF(s.auto_renew, 'Yes', 'No')             AS auto_renew,
-    CONCAT(FORMAT(s.cost,2), ' ', t.currency) AS cost,
-    u.username             AS requested_by,
-    DATE_FORMAT(s.created_at, '%Y-%m-%d %H:%i:%s') AS created_at,
-    DATE_FORMAT(s.updated_at, '%Y-%m-%d %H:%i:%s') AS updated_at
+      s.id,
+      c.company_name   AS customer,
+      p.name           AS product,
+      s.license_key,
+      sts.name         AS status,
+      lt.name          AS license_type,
+      DATE_FORMAT(s.start_date, '%Y-%m-%d') AS start_date,
+      IFNULL(DATE_FORMAT(s.renewal_date, '%Y-%m-%d'), '-') AS renewal_date,
+      IFNULL(DATE_FORMAT(s.expiration_date, '%Y-%m-%d'), '-') AS expiration_date,
+      IF(s.auto_renew, 'Yes', 'No') AS auto_renew,
+      CONCAT(FORMAT(s.cost,2),' MYR')   AS cost,
+      u.username       AS requested_by,
+      DATE_FORMAT(s.created_at, '%Y-%m-%d %H:%i:%s') AS created_at,
+      DATE_FORMAT(s.updated_at, '%Y-%m-%d %H:%i:%s') AS updated_at
     FROM subscriptions s
     JOIN customers              c   ON s.customer_id = c.id
     JOIN products               p   ON s.product_id  = p.id
     JOIN subscription_statuses  sts ON s.status_id   = sts.id
     JOIN license_types          lt  ON s.type_id     = lt.id
     JOIN users                  u   ON s.requested_by_user_id = u.id
-    /* if you need currency from another table, join it here; otherwise hardcode above */
-    JOIN product_pricing        t   ON t.product_id = s.product_id AND t.billing_cycle='one_time'
     ORDER BY s.id DESC
-    ";
+  ";
+
 
 
   // Fetch the subscription data from the database
