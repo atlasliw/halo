@@ -17,6 +17,7 @@
     <div class="container-fluid page-body-wrapper">
 
       <?php include __DIR__.'/partials/_sidebar.php'; ?>
+      <?php include __DIR__.'/partials/_settings-panel.php'; ?>
 
       <div class="main-panel">
         <div class="content-wrapper">
