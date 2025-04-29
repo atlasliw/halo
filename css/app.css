@@ -1,14 +1,10 @@
-/* ----------------------------------------------------
-   App entry CSS — imports all required styles in one
-   ---------------------------------------------------- */
-
 /* 1) Feather icons */
 @import url("../vendors/feather/feather.css");
 
 /* 2) Themify icons */
 @import url("../vendors/ti-icons/css/themify-icons.css");
 
-/* 3) Vendor bundle (bootstrap, core plugins) */
+/* 3) Core vendor bundle (Bootstrap, core plugins) */
 @import url("../vendors/css/vendor.bundle.base.css");
 
 /* 4) DataTables Bootstrap 4 styling */
@@ -17,5 +13,5 @@
 /* 5) DataTables “select” extension */
 @import url("../js/select.dataTables.min.css");
 
-/* 6) Skydash theme styles */
+/* 6) Skydash theme (vertical‐layout‐light) */
 @import url("vertical-layout-light/style.css");
