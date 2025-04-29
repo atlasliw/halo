@@ -2,10 +2,11 @@
 <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
   <!-- Brand wrapper: full and mini logos -->
   <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-    <a class="navbar-brand brand-logo mr-5" href="index.html">
+    <!-- Link logo back to dashboard -->
+    <a class="navbar-brand brand-logo mr-5" href="index.php">
       <img src="images/logo.svg" class="mr-2" alt="logo"/>
     </a>
-    <a class="navbar-brand brand-logo-mini" href="index.html">
+    <a class="navbar-brand brand-logo-mini" href="index.php">
       <img src="images/logo-mini.svg" alt="logo"/>
     </a>
   </div>
@@ -26,7 +27,8 @@
               <i class="icon-search"></i>
             </span>
           </div>
-          <input type="text" class="form-control" id="navbar-search-input" placeholder="Search now" aria-label="search" aria-describedby="search">
+          <input type="text" class="form-control" id="navbar-search-input"
+                 placeholder="Search now" aria-label="search" aria-describedby="search">
         </div>
       </li>
     </ul>
@@ -35,11 +37,13 @@
     <ul class="navbar-nav navbar-nav-right">
       <!-- Notifications dropdown -->
       <li class="nav-item dropdown">
-        <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-toggle="dropdown">
+        <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown"
+           href="#" data-toggle="dropdown">
           <i class="icon-bell mx-0"></i>
           <span class="count"></span>
         </a>
-        <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
+        <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list"
+             aria-labelledby="notificationDropdown">
           <p class="mb-0 font-weight-normal float-left dropdown-header">Notifications</p>
           <a class="dropdown-item preview-item">
             <div class="preview-thumbnail">
@@ -83,27 +87,30 @@
           <img src="images/faces/face28.jpg" alt="profile"/>
         </a>
         <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
-          <a class="dropdown-item">
+          <!-- Link to user settings page -->
+          <a class="dropdown-item" href="config/general.php">
             <i class="ti-settings text-primary"></i>
             Settings
           </a>
-          <a class="dropdown-item">
+          <!-- Logout action -->
+          <a class="dropdown-item" href="logout.php">
             <i class="ti-power-off text-primary"></i>
             Logout
           </a>
         </div>
       </li>
 
-      <!-- Additional settings icon (large screens) -->
+      <!-- Additional settings icon (large screens): toggles the right‐sidebar -->
       <li class="nav-item nav-settings d-none d-lg-flex">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="#" id="settings-trigger">
           <i class="icon-ellipsis"></i>
         </a>
       </li>
     </ul>
 
     <!-- Off-canvas sidebar toggler (small screens) -->
-    <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+    <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center"
+            type="button" data-toggle="offcanvas">
       <span class="icon-menu"></span>
     </button>
   </div>
