@@ -1,104 +1,135 @@
 <nav class="sidebar sidebar-offcanvas" id="sidebar">
-        <ul class="nav">
-          <li class="nav-item">
-            <a class="nav-link" href="index.html">
-              <i class="icon-grid menu-icon"></i>
-              <span class="menu-title">Dashboard</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-              <i class="icon-layout menu-icon"></i>
-              <span class="menu-title">UI Elements</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="ui-basic">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Buttons</a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/dropdowns.html">Dropdowns</a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Typography</a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#form-elements" aria-expanded="false" aria-controls="form-elements">
-              <i class="icon-columns menu-icon"></i>
-              <span class="menu-title">Form elements</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="form-elements">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"><a class="nav-link" href="pages/forms/basic_elements.html">Basic Elements</a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#charts" aria-expanded="false" aria-controls="charts">
-              <i class="icon-bar-graph menu-icon"></i>
-              <span class="menu-title">Charts</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="charts">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="pages/charts/chartjs.html">ChartJs</a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables">
-              <i class="icon-grid-2 menu-icon"></i>
-              <span class="menu-title">Tables</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="tables">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="pages/tables/basic-table.html">Basic table</a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#icons" aria-expanded="false" aria-controls="icons">
-              <i class="icon-contract menu-icon"></i>
-              <span class="menu-title">Icons</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="icons">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="pages/icons/mdi.html">Mdi icons</a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
-              <i class="icon-head menu-icon"></i>
-              <span class="menu-title">User Pages</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="auth">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="pages/samples/login.html"> Login </a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/samples/register.html"> Register </a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#error" aria-expanded="false" aria-controls="error">
-              <i class="icon-ban menu-icon"></i>
-              <span class="menu-title">Error pages</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="error">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="pages/samples/error-404.html"> 404 </a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/samples/error-500.html"> 500 </a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="pages/documentation/documentation.html">
-              <i class="icon-paper menu-icon"></i>
-              <span class="menu-title">Documentation</span>
-            </a>
-          </li>
+  <ul class="nav">
+
+    <!-- Dashboard -->
+    <li class="nav-item">
+      <a class="nav-link" href="index.php">
+        <i class="icon-grid menu-icon"></i>
+        <span class="menu-title">Dashboard</span>
+      </a>
+    </li>
+
+    <!-- Contact Management (Customers & Partners) -->
+    <li class="nav-item">
+      <a class="nav-link" href="contact_management.php">
+        <i class="icon-people menu-icon"></i>
+        <span class="menu-title">Contact Management</span>
+      </a>
+    </li>
+
+    <!-- Products Management -->
+    <li class="nav-item">
+      <a class="nav-link" href="product_management.php">
+        <i class="icon-layers menu-icon"></i>
+        <span class="menu-title">Products</span>
+      </a>
+    </li>
+
+    <!-- Subscriptions -->
+    <li class="nav-item">
+      <a class="nav-link" href="subscriptions.php">
+        <i class="icon-key menu-icon"></i>
+        <span class="menu-title">Subscriptions</span>
+      </a>
+    </li>
+
+    <!-- Transactions -->
+    <li class="nav-item">
+      <a class="nav-link" href="transactions.php">
+        <i class="icon-currency menu-icon"></i>
+        <span class="menu-title">Transactions</span>
+      </a>
+    </li>
+
+    <!-- Helpdesk Tickets -->
+    <li class="nav-item">
+      <a class="nav-link" href="helpdesk_tickets.php">
+        <i class="icon-envelope-letter menu-icon"></i>
+        <span class="menu-title">Helpdesk</span>
+      </a>
+    </li>
+
+    <!-- System Logs -->
+    <li class="nav-item">
+      <a class="nav-link" href="system_logs.php">
+        <i class="icon-shield menu-icon"></i>
+        <span class="menu-title">System Logs</span>
+      </a>
+    </li>
+
+    <!-- Reports & Analytics -->
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="collapse" href="#reports-menu" aria-expanded="false" aria-controls="reports-menu">
+        <i class="icon-chart menu-icon"></i>
+        <span class="menu-title">Reports</span>
+        <i class="menu-arrow"></i>
+      </a>
+      <div class="collapse" id="reports-menu">
+        <ul class="nav flex-column sub-menu">
+          <li class="nav-item"><a class="nav-link" href="reports/subscriptions.php">Subscription Report</a></li>
+          <li class="nav-item"><a class="nav-link" href="reports/sales.php">Sales Report</a></li>
+          <li class="nav-item"><a class="nav-link" href="reports/helpdesk_metrics.php">Helpdesk Metrics</a></li>
+          <li class="nav-item"><a class="nav-link" href="reports/data_analysis.php">Data Analysis</a></li>
         </ul>
-      </nav>
+      </div>
+    </li>
+
+    <!-- Administration (Users & Roles) -->
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="collapse" href="#admin-menu" aria-expanded="false" aria-controls="admin-menu">
+        <i class="icon-settings menu-icon"></i>
+        <span class="menu-title">Administration</span>
+        <i class="menu-arrow"></i>
+      </a>
+      <div class="collapse" id="admin-menu">
+        <ul class="nav flex-column sub-menu">
+          <li class="nav-item"><a class="nav-link" href="users.php">Manage Users</a></li>
+          <li class="nav-item"><a class="nav-link" href="roles.php">Manage Roles</a></li>
+        </ul>
+      </div>
+    </li>
+
+    <!-- Lookup Data -->
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="collapse" href="#lookup-menu" aria-expanded="false" aria-controls="lookup-menu">
+        <i class="icon-notebook menu-icon"></i>
+        <span class="menu-title">Lookup Data</span>
+        <i class="menu-arrow"></i>
+      </a>
+      <div class="collapse" id="lookup-menu">
+        <ul class="nav flex-column sub-menu">
+          <li class="nav-item"><a class="nav-link" href="company_types.php">Company Types</a></li>
+          <li class="nav-item"><a class="nav-link" href="states.php">States</a></li>
+          <li class="nav-item"><a class="nav-link" href="industries.php">Industries</a></li>
+          <li class="nav-item"><a class="nav-link" href="sla_levels.php">SLA Levels</a></li>
+          <li class="nav-item"><a class="nav-link" href="payment_terms.php">Payment Terms</a></li>
+          <li class="nav-item"><a class="nav-link" href="license_statuses.php">License Statuses</a></li>
+          <li class="nav-item"><a class="nav-link" href="license_types.php">License Types</a></li>
+          <li class="nav-item"><a class="nav-link" href="subscription_statuses.php">Subscription Statuses</a></li>
+          <li class="nav-item"><a class="nav-link" href="transaction_statuses.php">Transaction Statuses</a></li>
+          <li class="nav-item"><a class="nav-link" href="ticket_statuses.php">Ticket Statuses</a></li>
+          <li class="nav-item"><a class="nav-link" href="ticket_priorities.php">Ticket Priorities</a></li>
+          <li class="nav-item"><a class="nav-link" href="log_event_types.php">Log Event Types</a></li>
+        </ul>
+      </div>
+    </li>
+
+    <!-- System Configuration -->
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="collapse" href="#config-menu" aria-expanded="false" aria-controls="config-menu">
+        <i class="icon-equalizer menu-icon"></i>
+        <span class="menu-title">System Config</span>
+        <i class="menu-arrow"></i>
+      </a>
+      <div class="collapse" id="config-menu">
+        <ul class="nav flex-column sub-menu">
+          <li class="nav-item"><a class="nav-link" href="config/general.php">General Settings</a></li>
+          <li class="nav-item"><a class="nav-link" href="config/email.php">Email Settings</a></li>
+          <li class="nav-item"><a class="nav-link" href="config/integrations.php">Integrations</a></li>
+          <li class="nav-item"><a class="nav-link" href="config/localization.php">Localization</a></li>
+        </ul>
+      </div>
+    </li>
+
+  </ul>
+</nav>
