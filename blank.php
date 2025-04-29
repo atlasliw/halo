@@ -6,6 +6,7 @@
 <head>
   <!-- after -->
     <link rel="stylesheet" href="css/app.css">
+
   <title>Customers</title>
 </head>
 <body>
@@ -28,7 +29,20 @@
   </div>
 
   <!-- scripts -->
-  <script src="vendors/js/vendor.bundle.base.js"></script>
+    <!-- vendor.bundle.base.js includes jQuery, Popper and Bootstrap JS -->
+    <script src="vendors/js/vendor.bundle.base.js"></script>
+
+    <!-- Skydash off-canvas handlers (minimize & offcanvas) -->
+    <script src="js/off-canvas.js"></script>
+    <script src="js/hoverable-collapse.js"></script>
+
+    <!-- Core template init (toggles sidebar classes, etc.) -->
+    <script src="js/template.js"></script>
+
+    <!-- (optional) settings panel, to-do list, etc. -->
+    <script src="js/settings.js"></script>
+    <script src="js/todolist.js"></script>
+
   <!-- etc… -->
 </body>
 </html>
