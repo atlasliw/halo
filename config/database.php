@@ -1,34 +1,28 @@
 <?php
-// config.php
+// database.php
 
-// 1) Database credentials
-$db_host = 'localhost';               // or your Hostinger DB host
-$db_user = 'u737908269_atlas';
-$db_pass = '$1Rv1r@dmIn';
-$db_name = 'u737908269_halo';
+// show all errors (for development only!)
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
+// your credentials
+$host    = 'localhost';
+$db      = 'u737908269_halo';
+$user    = 'u737908269_atlas';
+$pass    = '$1Rv1r@dmIn';
+$charset = 'utf8mb4';
 
-// ===== MySQLi example =====
-$mysqli = new mysqli($db_host, $db_user, $db_pass, $db_name);
+// DSN & PDO options
+$dsn = "mysql:host=$host;dbname=$db;charset=$charset";
+$options = [
+    PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
+    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+];
 
-if ( $mysqli->connect_errno ) {
-    die("MySQLi connection failed: (" 
-        . $mysqli->connect_errno . ") " 
-        . $mysqli->connect_error
-    );
-}
-// echo "MySQLi connected successfully";
-
-
-
-// ===== PDO example =====
 try {
-    $dsn = "mysql:host={$db_host};dbname={$db_name};charset=utf8mb4";
-    $pdo = new PDO($dsn, $db_user, $db_pass, [
-        PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
-        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-    ]);
-    // echo "PDO connected successfully";
+    $pdo = new PDO($dsn, $user, $pass, $options);
 } catch (PDOException $e) {
-    die("PDO connection failed: " . $e->getMessage());
+    // if connection fails, show the error and exit
+    die("Database connection failed: " . $e->getMessage());
 }
