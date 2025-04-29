@@ -15,13 +15,6 @@
       </a>
     </li>
 
-    <!-- Contact Management (icon-only top-level) -->
-    <li class="nav-item">
-      <a class="nav-link" href="contact_management.php" title="Contact Management">
-        <i class="icon-people menu-icon"></i>
-      </a>
-    </li>
-
     <!-- Products (icon-only) -->
     <li class="nav-item">
       <a class="nav-link" href="product_management.php" title="Products">
