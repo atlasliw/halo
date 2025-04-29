@@ -26,3 +26,4 @@ try {
     // if connection fails, show the error and exit
     die("Database connection failed: " . $e->getMessage());
 }
+?>

@@ -5,29 +5,15 @@
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
-// 1) Database connection parameters
-$host    = 'localhost';
-$db      = 'u737908269_halo';
-$user    = 'u737908269_atlas';
-$pass    = '$1Rv1r@dmIn';
-$charset = 'utf8mb4';
+// 1) Include the shared PDO instance
+require __DIR__ . '/config/database.php';
 
-// 2) Set up DSN and PDO options
-$dsn = "mysql:host=$host;dbname=$db;charset=$charset";
-$options = [
-    PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
-    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-];
-
+// 2) Fetch all customer rows
 try {
-    // 3) Create PDO instance
-    $pdo = new PDO($dsn, $user, $pass, $options);
-
-    // 4) Fetch all customers
-    $stmt = $pdo->query('SELECT * FROM customers ORDER BY id');
+    $stmt      = $pdo->query('SELECT * FROM customers ORDER BY id');
     $customers = $stmt->fetchAll();
-} catch (\PDOException $e) {
-    die("Database error: " . $e->getMessage());
+} catch (PDOException $e) {
+    die("Query failed: " . $e->getMessage());
 }
 ?>
 <!DOCTYPE html>
