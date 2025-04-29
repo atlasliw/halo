@@ -64,52 +64,50 @@
 
       <div class="main-panel">
         <div class="content-wrapper">
-        <h4 class="mb-4">All Subscriptions</h4>
-          <div class="table-responsive">
-            <table id="subscriptionsTable" class="table table-striped table-bordered">
-              <thead>
-                <tr>
-                  <th>ID</th>
-                  <th>Customer</th>
-                  <th>Product</th>
-                  <th>License Key</th>
-                  <th>Status</th>
-                  <th>Type</th>
-                  <th>Start Date</th>
-                  <th>Renewal Date</th>
-                  <th>Expires</th>
-                  <th>Auto-Renew</th>
-                  <th>Cost</th>
-                  <th>Requested By</th>
-                  <th>Created At</th>
-                  <th>Updated At</th>
-                </tr>
-              </thead>
-              <tbody>
-                <?php foreach($rows as $r): ?>
+          <h4 class="mb-4">All Subscriptions</h4>
+            <div class="table-responsive">
+              <table id="subscriptionsTable" class="table table-striped table-bordered">
+                <thead>
                   <tr>
-                    <td><?= htmlspecialchars($r['id']) ?></td>
-                    <td><?= htmlspecialchars($r['customer']) ?></td>
-                    <td><?= htmlspecialchars($r['product']) ?></td>
-                    <td><?= htmlspecialchars($r['license_key']) ?></td>
-                    <td><?= htmlspecialchars($r['status']) ?></td>
-                    <td><?= htmlspecialchars($r['license_type']) ?></td>
-                    <td><?= $r['start_date'] ?></td>
-                    <td><?= $r['renewal_date'] ?></td>
-                    <td><?= $r['expiration_date'] ?></td>
-                    <td><?= $r['auto_renew'] ?></td>
-                    <td><?= $r['cost'] ?></td>
-                    <td><?= htmlspecialchars($r['requested_by']) ?></td>
-                    <td><?= $r['created_at'] ?></td>
-                    <td><?= $r['updated_at'] ?></td>
+                    <th>ID</th>
+                    <th>Customer</th>
+                    <th>Product</th>
+                    <th>License Key</th>
+                    <th>Status</th>
+                    <th>Type</th>
+                    <th>Start Date</th>
+                    <th>Renewal Date</th>
+                    <th>Expires</th>
+                    <th>Auto-Renew</th>
+                    <th>Cost</th>
+                    <th>Requested By</th>
+                    <th>Created At</th>
+                    <th>Updated At</th>
                   </tr>
-                <?php endforeach; ?>
-              </tbody>
-            </table>
+                </thead>
+                <tbody>
+                  <?php foreach($rows as $r): ?>
+                    <tr>
+                      <td><?= htmlspecialchars($r['id']) ?></td>
+                      <td><?= htmlspecialchars($r['customer']) ?></td>
+                      <td><?= htmlspecialchars($r['product']) ?></td>
+                      <td><?= htmlspecialchars($r['license_key']) ?></td>
+                      <td><?= htmlspecialchars($r['status']) ?></td>
+                      <td><?= htmlspecialchars($r['license_type']) ?></td>
+                      <td><?= $r['start_date'] ?></td>
+                      <td><?= $r['renewal_date'] ?></td>
+                      <td><?= $r['expiration_date'] ?></td>
+                      <td><?= $r['auto_renew'] ?></td>
+                      <td><?= $r['cost'] ?></td>
+                      <td><?= htmlspecialchars($r['requested_by']) ?></td>
+                      <td><?= $r['created_at'] ?></td>
+                      <td><?= $r['updated_at'] ?></td>
+                    </tr>
+                  <?php endforeach; ?>
+                </tbody>
+              </table>
+            </div>
           </div>
-        </div>
-        </div>
-
         <?php include __DIR__.'/partials/_footer.php'; ?>
       </div>
     </div>
