@@ -1,72 +1,62 @@
 <?php
-// customers.php
+session_start();
+require __DIR__ . '/config/database.php'; // adjust path if needed
 
-// (Optional) Show errors for debugging
-ini_set('display_errors', 1);
+// Show all errors (DEV only)
+ini_set('display_errors',1);
 error_reporting(E_ALL);
 
-// 1) Include the shared PDO instance
-require __DIR__ . '/config/database.php';
+$error = '';
 
-// 2) Fetch all customer rows
-try {
-    $stmt      = $pdo->query('SELECT * FROM customers ORDER BY id');
-    $customers = $stmt->fetchAll();
-} catch (PDOException $e) {
-    die("Query failed: " . $e->getMessage());
+if (isset($_SESSION['user_id'])) {
+    header('Location: index.php');
+    exit;
+}
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $username = trim($_POST['username'] ?? '');
+    $password = $_POST['password'] ?? '';
+    
+    if ($username === '' || $password === '') {
+        $error = 'Please enter both username and password.';
+    } else {
+        $stmt = $pdo->prepare('
+            SELECT id, username, password_hash
+            FROM users
+            WHERE username = :u OR email = :u
+            LIMIT 1
+        ');
+        $stmt->execute(['u' => $username]);
+        $user = $stmt->fetch();
+
+        // === DEBUGGING BLOCK START ===
+        echo "<pre>";
+        echo "Input username: {$username}\n";
+        echo "Input password: {$password}\n\n";
+        
+        if ($user) {
+            echo "DB row:\n";
+            echo "  id: {$user['id']}\n";
+            echo "  username: {$user['username']}\n";
+            echo "  password_hash: {$user['password_hash']}\n\n";
+            $check = password_verify($password, $user['password_hash']) ? 'true' : 'false';
+            echo "password_verify result: {$check}\n";
+        } else {
+            echo "No user found for '{$username}'.\n";
+        }
+        echo "</pre>";
+        exit;
+        // === DEBUGGING BLOCK END ===
+
+        // (Original logic below, will never run until you remove the exit)
+        if ($user && password_verify($password, $user['password_hash'])) {
+            $_SESSION['user_id']  = $user['id'];
+            $_SESSION['username'] = $user['username'];
+            header('Location: index.php');
+            exit;
+        } else {
+            $error = 'Invalid username or password.';
+        }
+    }
 }
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Customer Details</title>
-  <!-- Bootstrap CSS (optional but useful) -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <!-- DataTables CSS -->
-  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap4.min.css">
-  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
-</head>
-<body>
-  <div class="container mt-5">
-    <h1 class="mb-4">Customer Details</h1>
-    <table id="customersTable" class="table table-striped table-bordered" style="width:100%">
-      <thead>
-        <tr>
-          <?php if (!empty($customers)): ?>
-            <?php foreach (array_keys($customers[0]) as $col): ?>
-              <th><?= htmlspecialchars($col) ?></th>
-            <?php endforeach; ?>
-          <?php endif; ?>
-        </tr>
-      </thead>
-      <tbody>
-        <?php foreach ($customers as $row): ?>
-          <tr>
-            <?php foreach ($row as $cell): ?>
-              <td><?= htmlspecialchars($cell) ?></td>
-            <?php endforeach; ?>
-          </tr>
-        <?php endforeach; ?>
-      </tbody>
-    </table>
-  </div>
-
-  <!-- jQuery & Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
-  <!-- DataTables JS -->
-  <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
-  <script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap4.min.js"></script>
-
-  <script>
-    $(document).ready(function() {
-      $('#customersTable').DataTable({
-        pageLength: 25,
-        ordering:    true,
-        searching:   true
-      });
-    });
-  </script>
-</body>
-</html>
